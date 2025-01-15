@@ -1,2 +1,2 @@
-# knowledge-base
-Knowledge about AI especially LLMs and Agents
+# AI Knowledge Base
+Knowledge and Tutorials about AI especially LLMs and Agents

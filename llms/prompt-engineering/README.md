@@ -4,7 +4,7 @@ In addition to Retrieval-Augmented Generation (RAG), prompt engineering is one o
 
 What is prompt engineering?
 
-**Prompt engineering** is the process of crafting the prompt with effective instructions for a model, such that it consistently generates answers that fulfill the given task. Personally, I see it as communicating to a model what we want from it.
+**Prompt engineering** is the process of crafting the prompt with effective instructions for a model, such that it consistently generates answers that fulfill the given task. Personally, I see it as telling a model what we want from it.
 
 Now, let's get to know the major tools and techniques available to engineer prompts.
 
@@ -17,7 +17,7 @@ from openai import OpenAI
 client = OpenAI()
 
 completion = client.chat.completions.create(
-    model="gpt-4.1",
+    model="gpt-5",
     messages=[
         {
             "role": "developer",
@@ -85,7 +85,7 @@ As we can see **Prompt Engineering** is no rocket science or dark magic. It is b
 
 Sounded now simpler as it is. But as in human communication the complexity of the task changes how difficult it is to explain it. That is of course also the case for LLMs. The example above involves a very simple task that is easy to explain and leaves little room for ambiguity. But what if the task were for the AI model to act as the user’s best friend? That would be enormously complex and inherently ambiguous.
 
-So for complexer tasks we have to think of how to communicate them correctly and that is actually a quite hard task. We already learned that we can steer the model with the Identity, Instructions (these we can always make more precise and comprehensive) and Examples into the right directions. For the latter we have done something what is called _One-Shot-Learning_ i.e. giving the model one example in the prompt to learn from how to behave. In contrast not giving a single example is called _Zero-Shot-Learning_. As we move to more complex task scenarios using more examples makes sense (at least you probably had more than one example exercise for your exams :)) This is called **Few-Shot-Learning**.
+So for more complex tasks we have to think of how to communicate them correctly and that is actually a quite hard task. We already learned that we can steer the model with the Identity, Instructions (these we can always make more precise and comprehensive) and Examples into the right directions. For the latter we have done something what is called _One-Shot-Learning_ i.e. giving the model one example in the prompt to learn from how to behave. In contrast not giving a single example is called _Zero-Shot-Learning_. As we move to more complex task scenarios using more examples makes sense (at least you probably had more than one example exercise for your exams :)) This is called **Few-Shot-Learning**.
 
 The model implicitly "picks up" the pattern from those examples and applies it to generate the answer. When creating examples, we try to show a diverse range of possible inputs with the desired outputs and if necesssary also describe when which example is the most favorable.
 
@@ -189,7 +189,7 @@ Despite limited features, the reviewer finds the product well-suited to their ne
 
 ## Include **all!** relevant context information
 
-The problem of communicating with AI is that we often do not think about all the things the AI has to know to properly do the task. To navigate that it is often helpful to think of the AI as of a new employee who brings some general knowledge and skills, but has no plan or further information hence we have to give him/her all the detail in complete what is not necessary in our normal communication because there is a lot of inherent knowledge already shared between us, so we just know what the other person means when she/he says this. This is not the case with LLMs (at least yet -2025), so we have to painfully describe every detail.
+The problem of communicating with AI is that we often do not think about all the things the AI has to know to properly do the task. To navigate that it is often helpful to think of the AI as of a new employee who brings some general knowledge and skills, but has no plan or further information hence we have to give him/her all the detail in complete what is not necessary in our normal communication because there is a lot of inherent knowledge already shared between us, so we just know what the other person means when she/he says this. This is not the case with LLMs (at least yet -2026), so we have to painfully describe every detail.
 This is why it is really important to give the model all the necessary context.
 
 Here are a few common reasons why you might do this:
